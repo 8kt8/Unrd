@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.unrd.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_to_image_fragment"
+            app:destination="@id/imageFragment"
+            app:popUpTo="@id/mainFragment"
+            tools:layout="@layout/image_fragment"/>
+        <action
+            android:id="@+id/action_to_video_fragment"
+            app:destination="@id/videoFragment"
+            app:popUpTo="@id/mainFragment"
+            tools:layout="@layout/video_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.unrd.fragment.image.ImageFragment"
+        android:label="ImageFragment">
+        <argument
+            android:name="url"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.unrd.fragment.video.VideoFragment"
+        android:label="VideoFragment">
+        <argument
+            android:name="url"
+            app:argType="string"/>
+    </fragment>
+</navigation>
